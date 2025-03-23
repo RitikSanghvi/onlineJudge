@@ -7,11 +7,12 @@ const Register = () => {
     const { register } = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('user');
     const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
-        const userData = { username, password };
+        const userData = { username, password,role };
         register(userData);
     };
     const goToLogin = () => {
@@ -19,7 +20,9 @@ const Register = () => {
     };
 
     return (
-        <div>
+        
+        <div class="form-container">
+
             <h2>Register</h2>
             <form onSubmit={handleRegister}>
                 <input 
@@ -36,8 +39,11 @@ const Register = () => {
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                 />
-                <button type="submit">Register</button>
-                <button type="button" onClick={goToLogin} style={{ marginLeft: '10px' }}>Login</button>
+<div className="button-container">
+                    <button onClick={() => setRole('user')}>User Register</button>
+                <button onClick={() => setRole('admin')}>Admin Register</button>
+            </div>                
+            <button type="button" onClick={goToLogin}>Go To Login</button>
 
                 
             </form>

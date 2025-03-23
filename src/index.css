@@ -1,28 +1,51 @@
 body {
+  background-color: white;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
+.form-container {
+  position: absolute;
+  right: 50px; /* Adjust as needed */
+  top: 50%;
+  margin-top: 20px;
+  transform: translateY(-50%);
+  width: 350px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.form-addProblem {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  margin-top: 20px;
+  transform: translateY(-50%);
+  width: 350px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h3 {
+  margin-left: 20px;
+}
 h2 {
   margin-bottom: 20px;
-  color: #fff;
+  color: #333;
 }
 
 form {
   margin: auto;
   width: 300px;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
 }
 
 input {
@@ -30,15 +53,16 @@ input {
   margin: 10px 0;
   padding: 12px;
   border-radius: 6px;
-  border: none;
-  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  background: #f9f9f9; /* Slightly off-white */
   color: #333;
   box-sizing: border-box;
 }
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-color: #4caf50;
 }
 
 button {
@@ -72,4 +96,110 @@ button:nth-of-type(2):hover {
 
 button:nth-of-type(2):active {
   background: #00408a;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Problem-list */
+.problems-container {
+  margin-left: 10px;
+  margin-top: 100px;
+  max-width: 60%; /* Increased width */
+  text-align: center;
+}
+
+.problems-table {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.problems-table th,
+.problems-table td {
+  padding: 15px; /* Increased padding for better spacing */
+  border: 1px solid #ddd;
+}
+
+.problems-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+.problem-row:hover {
+  background-color: #f1f1f1;
+}
+
+.problem-link {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+.problem-link:hover {
+  text-decoration: underline;
+}
+
+.status {
+  color: #666;
+}
+
+.difficulty {
+  font-weight: bold;
+}
+
+.difficulty.easy {
+  color: green;
+}
+
+.difficulty.medium {
+  color: orange;
+}
+
+.difficulty.hard {
+  color: red;
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  margin-bottom: 60px; /* Space between header and problem list */
+
+  right: 20px;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  width: 100px;
+  margin-right: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+textarea,
+input {
+  flex: 1;
 }

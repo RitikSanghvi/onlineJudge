@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../AuthContext';
 
+
 const Login = () => {
     const { login } = useContext(AuthContext);
     const [username, setUsername] = useState('');
@@ -12,7 +13,9 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         const userData = { username, password };
-        login(userData);
+        login(userData,navigate);
+        //navigate('/problems');
+        
     };
 
     const goToRegister = () => {
@@ -20,7 +23,8 @@ const Login = () => {
     };
 
     return (
-        <div>
+         
+        <div class="form-container">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <input 
@@ -37,8 +41,12 @@ const Login = () => {
                     value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                 />
-                <button type="submit">Login</button>
-                <button type="button" onClick={goToRegister} style={{ marginLeft: '10px' }}>Register</button>
+                <div>
+                <button onClick={handleLogin}>Login</button>
+
+            </div>
+            <button type="button" onClick={goToRegister}>New User Sign Up</button>
+
             </form>
         </div>
     );
